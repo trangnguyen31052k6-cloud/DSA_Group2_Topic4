@@ -29,5 +29,5 @@ The software architecture is engineered to satisfy the following technical speci
 ## 🏗️ System Architecture
 The structural layout relies on a decoupled, modular design. The UML Class Diagram below details the explicit attributes, methods, composition closures, and behavioral dependencies governing the system components.
 
-![UML Class Diagram](UML.png)
+![UML Class Diagram](image/UML.png)
 
