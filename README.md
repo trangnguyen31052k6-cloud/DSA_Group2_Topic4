@@ -9,7 +9,7 @@
 * **Thành viên 4:Nguyễn Đình Khải_11245883** Tính năng Tìm kiếm và Thay thế (Find & Replace).
 * **Thành viên 5:Trần Trúc Quỳnh_11245929** Quản lý lịch sử thao tác (Undo/Redo bằng Stack) và dựng Giao diện Menu (UI).
 # 📑 Phase 1: System Architecture & Specification
-**Project: Console-Based Text Editor (Topic 14)**
+
 
 ## 🎯 Project Objectives
 * Develop a lightweight, robust text editor operating entirely within the command-line interface (CLI) environment.
@@ -29,5 +29,5 @@ The software architecture is engineered to satisfy the following technical speci
 ## 🏗️ System Architecture
 The structural layout relies on a decoupled, modular design. The UML Class Diagram below details the explicit attributes, methods, composition closures, and behavioral dependencies governing the system components.
 
-![UML Class Diagram](mermaid-diagram-2026-05-22-173447.png)
+![UML Class Diagram](UML.png)
 
