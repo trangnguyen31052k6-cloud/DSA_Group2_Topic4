@@ -1,5 +1,5 @@
 # DSA_Group2_Topic14
-# 📝 Đồ án DSA: Simple Text Editor (Topic 14)
+# 📝 Mini Database Engine with Multiple Data Structures Create a simple in-memory database supporting tables (arrays/lists), indexes (BST/Hash), and queries (search, sort, join). Demonstrate different data structures' strengths.
 
 Dự án xây dựng một trình soạn thảo văn bản đơn giản trên Terminal, ứng dụng cấu trúc dữ liệu **Doubly Linked List** (Danh sách liên kết đôi) và **Stack** (Ngăn xếp).
 
