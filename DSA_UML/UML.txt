@@ -1,0 +1,52 @@
+classDiagram
+    class Node {
+        -String data
+        -Node prev
+        -Node next
+        +__init__(data: str)
+    }
+
+    class DoublyLinkedList {
+        -Node head
+        -Node tail
+        +append_node(text: str)
+        +insert_at_beginning(text: str)
+        +insert_after_node(current_node: Node, text: str)
+        +remove_node(node: Node)
+        +load_from_file(filename: str) bool
+        +save_to_file(filename: str) bool
+        +display()
+    }
+
+    class Cursor {
+        -Node current_node
+        +move_up()
+        +move_down()
+        +move_left()
+        +move_right()
+    }
+
+    class ActionStack {
+        -List history
+        +push_action(action_type, node, data)
+        +pop_action()
+        +undo()
+        +redo()
+    }
+
+    class TextEditor {
+        -DoublyLinkedList document
+        -Cursor cursor
+        -ActionStack history
+        +run_ui()
+        +insert_text()
+        +delete_text()
+        +find_and_replace()
+    }
+
+    %% Các mối quan hệ (Relationships)
+    DoublyLinkedList "1" *-- "0..*" Node : contains
+    Cursor ..> Node : references
+    TextEditor --> DoublyLinkedList : manages
+    TextEditor --> Cursor : controls
+    TextEditor --> ActionStack : tracks
