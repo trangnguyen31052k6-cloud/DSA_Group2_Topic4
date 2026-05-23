@@ -1,0 +1,16 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ECE8F6",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#A092D1",
+    "lineColor": "#6B6B6B",
+    "fontFamily": "arial"
+  }
+}}%%
+graph TD
+    A[User: Click Button / Select Dropdown on Web GUI] -->|Transmit Command & Data| B(TextEditor: Business Logic)
+    B -->|1. Save state before modification| C{ActionStack: push_action}
+    B -->|2. Update cursor position| D[Cursor: Update Reference]
+    B -->|3. Memory manipulation| E[(DoublyLinkedList: Disconnect/Reconnect Node)]
+    E -->|4. Return new structure| F[Web GUI: Display Text]
