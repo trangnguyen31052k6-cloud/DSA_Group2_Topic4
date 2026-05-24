@@ -69,17 +69,22 @@ The Undo/Redo subsystem is designed using a hybrid recovery strategy to balance 
 * **🧩 Dependency Injection Strategy:** The editor initializes independent modules and injects shared references (`document`, `cursor`) into operational subsystems, improving maintainability, testing flexibility, and reducing component coupling.
 * **🛡️ Stability & Exception Handling:** To improve runtime reliability, the integration layer includes protected `try/except` execution blocks, terminal recovery fallback, safe screen clearing for IDEs, and emergency interruption handling (`KeyboardInterrupt`).
 
-## 📸 System Demonstration
+## 📸 Phase 4: System Demonstration
 
-1** Main Interface **
-![Main UI](images/mainUI.png)
+Here are visual demonstrations of the Text Editor's core functionalities executing directly within the terminal environment.
 
-2** Undo / Redo **
-![Undo](images/undo.png)
-![Redo](images/redo.png)
+## 1️⃣ Main Command-Line Interface
+![Main Command-Line Interface](images/mainUI.png)
 
-3** Replace All Snapshot **
-![Find and Replace](images/find_and_replace.png)
+## 2️⃣ State Recovery (Undo & Redo)
+**Undo Execution:**
+![Undo Operation](images/undo.png)
 
-4** Save file **
-![Save file](images/save.png)
+**Redo Execution:**
+![Redo Operation](images/redo.png)
+
+## 3️⃣ Snapshot Restoration (Replace All)
+![Replace All Snapshot](images/find_and_replace.png)
+
+## 4️⃣ File I/O Engine (Save to Disk)
+![Save File Engine](images/save.png)
