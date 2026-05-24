@@ -45,7 +45,28 @@ class InsertAndDelete:
             self.cursor.current_node.data = new_line
             
             self.cursor.col_index -= 1
+    def forward_delete(self):
+        
+        current_line = self.cursor.current_node.data
+        position = self.cursor.col_index
 
+        if self.cursor.col_index == len(current_line) and self.cursor.current_node.next:
+            
+            next_node = self.cursor.current_node.next
+
+            self.cursor.current_node.data += next_node.data
+
+            self.document.remove_node(next_node) 
+            
+        elif position == len(current_line):
+            return
+        
+        else: 
+            left = current_line[:position]
+            right = current_line[position +1:]
+
+            new_line = left + right
+            self.cursor.current_node.data = new_line
 
     def Enter_key(self):
         current_line = self.cursor.current_node.data
