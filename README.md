@@ -74,17 +74,23 @@ The Undo/Redo subsystem is designed using a hybrid recovery strategy to balance 
 Here are visual demonstrations of the Text Editor's core functionalities executing directly within the terminal environment.
 
 ## 1️⃣ Main Command-Line Interface
+
 ![Main Command-Line Interface](image/mainUI.png)
 
 ## 2️⃣ State Recovery (Undo & Redo)
+
 **Undo Execution:**
+
 ![Undo Operation](image/undo.png)
 
 **Redo Execution:**
+
 ![Redo Operation](image/redo.png)
 
 ## 3️⃣ Snapshot Restoration (Replace All)
+
 ![Replace All Snapshot](image/find_and_replace.png)
 
 ## 4️⃣ File I/O Engine (Save to Disk)
+
 ![Save File Engine](image/save.png)
