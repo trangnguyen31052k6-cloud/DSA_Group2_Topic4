@@ -35,7 +35,7 @@ The structural layout relies on a decoupled, modular design. The UML Class Diagr
 ## 🌊 System Data Flow
 The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
 
-![Data Flow Diagram](image/Data_Flow.png)
+![Data Flow Diagram](image/Data Flow.png)
 
 ## 🔄 The Data Flow Pipeline
 The system architecture is strictly optimized for a modern **Web GUI** environment. Every user interaction (e.g., clicking a button or selecting a dropdown option) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
@@ -53,8 +53,3 @@ Unlike traditional static arrays, the cursor is implemented as a live object mai
 To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid Web GUI inputs, the navigation algorithm implements dual-layer protections:
 * **Null Pointer Safeguards:** Strictly validates adjacent nodes before executing any vertical transition, blocking invalid memory jumps at the head or tail of the document.
 * **Dynamic Snap Alignment:** Employs a mathematical bounding function—`min(col_index, len(current_node.data))`—to automatically snap the horizontal coordinate to the safe boundary when the cursor jumps between lines of asymmetric lengths.
-
-## 🌊 System Data Flow
-The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
-
-![Data Flow Diagram](image/Data_Flow.png)
