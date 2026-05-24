@@ -53,3 +53,19 @@ Unlike traditional static arrays, the cursor is implemented as a live object mai
 To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid Web GUI inputs, the navigation algorithm implements dual-layer protections:
 * **Null Pointer Safeguards:** Strictly validates adjacent nodes before executing any vertical transition, blocking invalid memory jumps at the head or tail of the document.
 * **Dynamic Snap Alignment:** Employs a mathematical bounding function—`min(col_index, len(current_node.data))`—to automatically snap the horizontal coordinate to the safe boundary when the cursor jumps between lines of asymmetric lengths.
+
+# 📑 Phase 5: Undo/Redo Architecture & System Integration
+
+## 🔁 Hybrid Undo/Redo Architecture
+The Undo/Redo subsystem is designed using a hybrid recovery strategy to balance memory efficiency and state consistency during document mutations.
+
+* **⚙️ Command Pattern for Lightweight Operations:** For incremental text operations (character insertion, backspace, forward delete, enter key), the system stores only the affected node reference, cursor position, and modified text fragment. This minimizes memory overhead while allowing fast rollback execution.
+* **📸 Snapshot (Memento) Strategy for Structural Mutations:** For large-scale transformations such as **Replace All**, the system captures a full snapshot containing the complete document state, cursor line position, and cursor column index. This guarantees safe restoration even when multiple nodes are reconstructed.
+* **🧠 Cursor State Preservation:** A dedicated recovery mechanism restores the active node reference and horizontal cursor alignment after Undo/Redo execution to prevent cursor desynchronization.
+* **♻️ Memory Reclamation:** During snapshot restoration, outdated disconnected nodes become orphan objects. These objects are automatically reclaimed by Python's built-in Garbage Collector, preventing persistent memory leakage.
+
+## 🔗 System Integration Layer
+* **🏛️ Centralized Orchestration:** The `main.py` module functions as the central orchestration layer. It coordinates interactions between `DoublyLinkedList`, `Cursor`, `InsertAndDelete`, `FindAndReplace`, and `ActionStack`, enforcing strong Separation of Concerns (SoC).
+* **🧩 Dependency Injection Strategy:** The editor initializes independent modules and injects shared references (`document`, `cursor`) into operational subsystems, improving maintainability, testing flexibility, and reducing component coupling.
+* **🛡️ Stability & Exception Handling:** To improve runtime reliability, the integration layer includes protected `try/except` execution blocks, terminal recovery fallback, safe screen clearing for IDEs, and emergency interruption handling (`KeyboardInterrupt`).
+
