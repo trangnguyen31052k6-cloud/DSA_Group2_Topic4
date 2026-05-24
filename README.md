@@ -33,7 +33,7 @@ The structural layout relies on a decoupled, modular design. The UML Class Diagr
 # 📑 Phase 2: Operational Data Flow & Cursor
 
 ## 🌊 System Data Flow
-The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
+The operational data flow diagram below illustrates the journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
 
 ![Data Flow Diagram](image/DataFlow.png)
 
