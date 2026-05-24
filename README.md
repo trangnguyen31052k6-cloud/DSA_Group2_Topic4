@@ -1,4 +1,4 @@
-# DSA_Group2_Topic4 DSA_Group2_Topic4
+# DSA_Group2_Topic4 
 # 📝 Text Editor using Doubly Linked List Develop a simple text editor where each character/line is a node in a doubly linked list. Support features: undo/redo, cursor movement, find & replace.
 
 
