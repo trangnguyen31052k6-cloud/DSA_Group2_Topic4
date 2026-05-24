@@ -35,7 +35,7 @@ The structural layout relies on a decoupled, modular design. The UML Class Diagr
 ## 🌊 System Data Flow
 The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
 
-![Data Flow Diagram](image/Data Flow.png)
+![Data Flow Diagram](image/DataFlow.png)
 
 ## 🔄 The Data Flow Pipeline
 The system architecture is strictly optimized for a modern **Web GUI** environment. Every user interaction (e.g., clicking a button or selecting a dropdown option) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
