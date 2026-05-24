@@ -69,3 +69,17 @@ The Undo/Redo subsystem is designed using a hybrid recovery strategy to balance 
 * **🧩 Dependency Injection Strategy:** The editor initializes independent modules and injects shared references (`document`, `cursor`) into operational subsystems, improving maintainability, testing flexibility, and reducing component coupling.
 * **🛡️ Stability & Exception Handling:** To improve runtime reliability, the integration layer includes protected `try/except` execution blocks, terminal recovery fallback, safe screen clearing for IDEs, and emergency interruption handling (`KeyboardInterrupt`).
 
+## 📸 System Demonstration
+
+1** Main Interface **
+![Main UI](images/mainUI.png)
+
+2** Undo / Redo **
+![Undo](images/undo.png)
+![Redo](images/redo.png)
+
+3** Replace All Snapshot **
+![Find and Replace](images/find_and_replace.png)
+
+4** Save file **
+![Save file](images/save.png)
