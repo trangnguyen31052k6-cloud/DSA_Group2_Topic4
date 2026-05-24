@@ -46,8 +46,8 @@ The system architecture is strictly optimized for a modern **Web GUI** environme
 
 ## 🧭 Cursor Movement Mechanics
 Unlike traditional static arrays, the cursor is implemented as a live object maintaining a direct memory reference to a specific `Node` (representing a line of text).
-* **Vertical Traversal (Up/Down):** Navigates the text layout sequentially by shifting the pointer reference through `prev` and `next` properties.
-* **Horizontal Traversal (Left/Right):** Modifies the `col_index` integer within the boundaries of the active node's string data without altering the node reference.
+* **Vertical Traversal (Up/Down):** Traverses the text layout sequentially by shifting the pointer reference through prev and next properties.
+* **Horizontal Traversal (Left/Right):** Increments or decrements a local integer variable called col_index within the boundaries of the active node's string data.
 
 ## 🛡️ Memory Safety & Edge Case Handling
 To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid Web GUI inputs, the navigation algorithm implements dual-layer protections:
