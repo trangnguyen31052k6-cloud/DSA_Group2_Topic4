@@ -39,10 +39,10 @@ The operational data flow diagram below illustrates the journey of a UI command 
 
 ## 🔄 The Data Flow Pipeline
 The system architecture is strictly optimized for a modern **Web GUI** environment. Every user interaction (e.g., clicking a button or selecting a dropdown option) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
-1. **Log State:** The current state is securely pushed to the `ActionStack` prior to any structural modification.
-2. **Update Coordinates:** The `Cursor` calculates the exact reference `Node` and column index.
-3. **Memory Mutation:** The `DoublyLinkedList` executes safe pointer disconnections and reconnections at the physical data layer.
-4. **UI Refresh:** The newly updated structure is returned and rendered dynamically on the Web GUI.
+1. **Save state before modification:** The current state is securely pushed to the `ActionStack` prior to any structural modification.
+2. **Update cursor position:** The `Cursor` calculates the exact reference `Node` and column index.
+3. **Memory manipulation:** The `DoublyLinkedList` executes safe pointer disconnections and reconnections at the physical data layer.
+4. **Return new structure:** The newly updated structure is returned and rendered dynamically on the Web GUI.
 
 ## 🧭 Cursor Movement Mechanics
 Unlike traditional static arrays, the cursor is implemented as a live object maintaining a direct memory reference to a specific `Node` (representing a line of text).
