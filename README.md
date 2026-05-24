@@ -30,4 +30,31 @@ The software architecture is engineered to satisfy the following technical speci
 The structural layout relies on a decoupled, modular design. The UML Class Diagram below details the explicit attributes, methods, composition closures, and behavioral dependencies governing the system components.
 
 ![UML Class Diagram](image/UML.png)
+# 📑 Phase 2: Operational Data Flow & Cursor
 
+## 🌊 System Data Flow
+The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
+
+![Data Flow Diagram](image/Data_Flow.png)
+
+## 🔄 The Data Flow Pipeline
+The system architecture is strictly optimized for a modern **Web GUI** environment. Every user interaction (e.g., clicking a button or selecting a dropdown option) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
+1. **Log State:** The current state is securely pushed to the `ActionStack` prior to any structural modification.
+2. **Update Coordinates:** The `Cursor` calculates the exact reference `Node` and column index.
+3. **Memory Mutation:** The `DoublyLinkedList` executes safe pointer disconnections and reconnections at the physical data layer.
+4. **UI Refresh:** The newly updated structure is returned and rendered dynamically on the Web GUI.
+
+## 🧭 Cursor Movement Mechanics
+Unlike traditional static arrays, the cursor is implemented as a live object maintaining a direct memory reference to a specific `Node` (representing a line of text).
+* **Vertical Traversal (Up/Down):** Navigates the text layout sequentially by shifting the pointer reference through `prev` and `next` properties.
+* **Horizontal Traversal (Left/Right):** Modifies the `col_index` integer within the boundaries of the active node's string data without altering the node reference.
+
+## 🛡️ Memory Safety & Edge Case Handling
+To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid Web GUI inputs, the navigation algorithm implements dual-layer protections:
+* **Null Pointer Safeguards:** Strictly validates adjacent nodes before executing any vertical transition, blocking invalid memory jumps at the head or tail of the document.
+* **Dynamic Snap Alignment:** Employs a mathematical bounding function—`min(col_index, len(current_node.data))`—to automatically snap the horizontal coordinate to the safe boundary when the cursor jumps between lines of asymmetric lengths.
+
+## 🌊 System Data Flow
+The operational data flow diagram below illustrates the exact journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
+
+![Data Flow Diagram](image/Data_Flow.png)
