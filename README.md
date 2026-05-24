@@ -1,5 +1,5 @@
-# DSA_Group2_Topic14
-# 📝 Mini Database Engine with Multiple Data Structures Create a simple in-memory database supporting tables (arrays/lists), indexes (BST/Hash), and queries (search, sort, join). Demonstrate different data structures' strengths.
+# DSA_Group2_Topic4 DSA_Group2_Topic4
+# 📝 Text Editor using Doubly Linked List Develop a simple text editor where each character/line is a node in a doubly linked list. Support features: undo/redo, cursor movement, find & replace.
 
 
 ## 👥 Thành viên nhóm 2 và Phân công công việc
