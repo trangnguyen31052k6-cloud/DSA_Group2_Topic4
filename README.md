@@ -30,7 +30,7 @@ The software architecture is engineered to satisfy the following technical speci
 The structural layout relies on a decoupled, modular design. The UML Class Diagram below details the explicit attributes, methods, composition closures, and behavioral dependencies governing the system components.
 
 ![UML Class Diagram](image/UML.png)
-# 📑 Phase 2: Operational Data Flow & Cursor
+# 📑 Phase 2: Operational Data Flow & Cursor Navigation
 
 ## 🌊 System Data Flow
 The operational data flow diagram below illustrates the journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
