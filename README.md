@@ -58,13 +58,13 @@ To help you draft a high-quality README section for **Phase 3**, I have structur
 
 Since you are managing a data science/data-heavy project, this section emphasizes the efficiency of your approach.
 
-### ** Phase 3: Core Editing Operations**
+### **Phase 3: Core Editing Operations**
 
-#### **## Overview**
+#### **Overview**
 
 Phase 3 focuses on the implementation of core text-editing operations, transforming the document from a static data structure into an interactive environment. This phase prioritizes efficient node manipulation and string processing within the linked-list architecture.
 
-#### **## Key Functionalities**
+#### **Key Functionalities**
 
 The `InsertAndDelete` class manages the state of the document based on cursor interaction:
 
@@ -73,7 +73,7 @@ The `InsertAndDelete` class manages the state of the document based on cursor in
 * **`forward_delete`**: Manages forward deletion. This function mirrors the backward logic but intelligently handles line-pulling, merging the next node's data into the current one when the cursor reaches the end of a line.
 * **`Enter_key`**: Implements line breaks by splitting the current node's data at the cursor position and creating a new node in the linked list, followed by a cursor reset to the new line.
 
-#### **## Technical Performance**
+#### **Technical Performance**
 
 The operations in this phase are optimized for a linked-list structure where individual line manipulation is performed in linear time:
 
