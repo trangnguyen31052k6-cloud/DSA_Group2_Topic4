@@ -38,7 +38,7 @@ The operational data flow diagram below illustrates the journey of a user comman
 ![Data Flow Diagram](image/DataFlow.png)
 
 ## 🔄 The Data Flow Pipeline
-The system architecture is strictly optimized for a **CLI Terminal** environment. Every user interaction (e.g., typing a command and pressing Enter) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
+The system architecture is strictly optimized for a CLI Terminal environment. Every user interaction (e.g., typing a command and pressing Enter) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
 1. **Save state before modification:** The current state is securely pushed to the `ActionStack` prior to any structural modification.
 2. **Update cursor position:** The `Cursor` calculates the exact reference `Node` and column index.
 3. **Memory manipulation:** The `DoublyLinkedList` executes safe pointer disconnections and reconnections at the physical data layer.
