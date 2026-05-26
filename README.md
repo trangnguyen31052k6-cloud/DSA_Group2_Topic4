@@ -82,9 +82,6 @@ The operations in this phase are optimized for a linked-list structure where ind
 | **Insert/Split/Merge** | $O(n)$ | Performance scales linearly with the length of the strings being processed ($n$). |
 | **Node Traversal** | $O(1)$ | Linked list pointer updates are constant time, ensuring efficient document restructuring. |
 
-
-**Would you like me to help you format a `Usage` example snippet to include right under your `Key Functionalities` section?**
-
 # 📑 Phase 5: Undo/Redo Architecture & System Integration
 
 ## 🔁 Hybrid Undo/Redo Architecture
