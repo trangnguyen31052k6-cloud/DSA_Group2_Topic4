@@ -58,7 +58,7 @@ To help you draft a high-quality README section for **Phase 3**, I have structur
 
 Since you are managing a data science/data-heavy project, this section emphasizes the efficiency of your approach.
 
-### **Phase 3: Core Editing Operations**
+# 📑 Phase 3: Core Editing Operations
 
 #### **Overview**
 
