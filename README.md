@@ -33,16 +33,16 @@ The structural layout relies on a decoupled, modular design. The UML Class Diagr
 # 📑 Phase 2: Operational Data Flow & Cursor Navigation
 
 ## 🌊 System Data Flow
-The operational data flow diagram below illustrates the journey of a UI command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
+The operational data flow diagram below illustrates the journey of a user command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
 
 ![Data Flow Diagram](image/DataFlow.png)
 
 ## 🔄 The Data Flow Pipeline
-The system architecture is strictly optimized for a modern **Web GUI** environment. Every user interaction (e.g., clicking a button or selecting a dropdown option) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
+The system architecture is strictly optimized for a **CLI Terminal** environment. Every user interaction (e.g., typing a command and pressing Enter) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
 1. **Save state before modification:** The current state is securely pushed to the `ActionStack` prior to any structural modification.
 2. **Update cursor position:** The `Cursor` calculates the exact reference `Node` and column index.
 3. **Memory manipulation:** The `DoublyLinkedList` executes safe pointer disconnections and reconnections at the physical data layer.
-4. **Return new structure:** The newly updated structure is returned and rendered dynamically on the Web GUI.
+4. **Return new structure:** The newly updated structure is returned and displayed dynamically on the Terminal.
 
 ## 🧭 Cursor Movement Mechanics
 Unlike traditional static arrays, the cursor is implemented as a live object maintaining a direct memory reference to a specific `Node` (representing a line of text).
@@ -50,13 +50,9 @@ Unlike traditional static arrays, the cursor is implemented as a live object mai
 * **Horizontal Traversal (Left/Right):** Increments or decrements a local integer variable called col_index within the boundaries of the active node's string data.
 
 ## 🛡️ Memory Safety & Edge Case Handling
-To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid Web GUI inputs, the navigation algorithm implements dual-layer protections:
+To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (`NullPointer` / `IndexError`) during rapid CLI inputs, the navigation algorithm implements dual-layer protections:
 * **Null Pointer Safeguards:** Strictly validates adjacent nodes before executing any vertical transition, blocking invalid memory jumps at the head or tail of the document.
 * **Dynamic Snap Alignment:** Employs a mathematical bounding function—`min(col_index, len(current_node.data))`—to automatically snap the horizontal coordinate to the safe boundary when the cursor jumps between lines of asymmetric lengths.
-
-To help you draft a high-quality README section for **Phase 3**, I have structured this briefing to highlight your technical implementations and the logic behind your text editor's core functionality.
-
-Since you are managing a data science/data-heavy project, this section emphasizes the efficiency of your approach.
 
 # 📑 Phase 3: Core Editing Operations
 
