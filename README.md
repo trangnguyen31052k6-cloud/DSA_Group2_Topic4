@@ -3,11 +3,11 @@
 
 
 ## 👥 Thành viên nhóm 2 và Phân công công việc
-* **Thành viên 1:Nguyễn Thị Đoan Trang_11245941** Xây dựng cấu trúc cốt lõi (Node, DoublyLinkedList) và hệ thống Đọc/Ghi file (File I/O).
-* **Thành viên 2:Phạm Anh Thơ_11245934** Xử lý logic di chuyển con trỏ (Cursor - Lên, Xuống, Trái, Phải).
-* **Thành viên 3:Nguyễn Nam Huy_11245880** Xử lý logic Thêm/Xóa văn bản (Insert/Delete).
-* **Thành viên 4:Nguyễn Đình Khải_11245883** Tính năng Tìm kiếm và Thay thế (Find & Replace).
-* **Thành viên 5:Trần Trúc Quỳnh_11245929** Quản lý lịch sử thao tác (Undo/Redo bằng Stack) và dựng Giao diện Menu (UI).
+* **Thành viên 1:Nguyễn Thị Đoan Trang_11245941** Node, DoublyLinkedList
+* **Thành viên 2:Phạm Anh Thơ_11245934** Cursor 
+* **Thành viên 3:Nguyễn Nam Huy_11245880** Insert/Delete
+* **Thành viên 4:Nguyễn Đình Khải_11245883** Find & Replace
+* **Thành viên 5:Trần Trúc Quỳnh_11245929** Undo/Redo using Stack
 # 📑 Phase 1: System Architecture & Specification
 
 
