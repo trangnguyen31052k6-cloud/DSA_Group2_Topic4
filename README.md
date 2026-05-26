@@ -35,7 +35,7 @@ The structural layout relies on a decoupled, modular design. The UML Class Diagr
 ## 🌊 System Data Flow
 The operational data flow diagram below illustrates the journey of a user command through our decoupled architecture, ensuring $O(1)$ performance for structural mutations.
 
-![Data Flow Diagram](image/DataFlow.png)
+
 
 ## 🔄 The Data Flow Pipeline
 The system architecture is strictly optimized for a **CLI Terminal** environment. Every user interaction (e.g., typing a command and pressing Enter) triggers a strict, unidirectional 4-step execution pipeline to guarantee data integrity:
