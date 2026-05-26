@@ -82,6 +82,58 @@ The operations in this phase are optimized for a linked-list structure where ind
 | **Insert/Split/Merge** | $O(n)$ | Performance scales linearly with the length of the strings being processed ($n$). |
 | **Node Traversal** | $O(1)$ | Linked list pointer updates are constant time, ensuring efficient document restructuring. |
 
+## 🔍 Find & Replace Architecture
+
+The `FindAndReplace` class operates as an independent subsystem,
+traversing the Doubly Linked List to locate and substitute text
+patterns without modifying the DLL's pointer structure.
+
+## 🔎 Find Algorithm: Sequential Traversal
+
+The `find()` method performs a full sequential scan across every
+node in the document, collecting all match coordinates before
+returning.
+
+**Traversal Logic:**
+1. Initialize traversal at `document.head`
+2. For each node, scan `current.data` using an advancing offset,
+   catching **multiple occurrences per line**
+3. Record each match as `{ node, line, col_start, col_end, context }`
+4. Advance to `current.next` until `None`, return full results list
+
+## ✂️ Replace Algorithm: Pointer Splice
+
+Rather than deleting and recreating nodes, replacement is performed
+entirely **inside `node.data`**, leaving `prev` and `next` pointers
+completely untouched. The current line is split into three parts:
+`left` (before the keyword), the `keyword` itself (discarded), and
+`right` (after the keyword). These are then rejoined with `new_text`
+in the middle and written back into the node.
+
+Two replacement modes are supported:
+
+| Method | Behavior | Use Case |
+|---|---|---|
+| `replace_first()` | Replaces the first match only | Targeted replacement |
+| `replace_all()` | Single pass through every node | Global substitution |
+
+## ⚡ Technical Performance
+
+| Operation | Complexity | Note |
+|---|---|---|
+| **find()** | O(n × m) | n = lines, m = avg line length |
+| **replace_first()** | O(n × m) + O(k) | O(k) for the splice, k = line length |
+| **replace_all()** | O(n × m) | Single pass per node |
+| **DLL pointer work** | O(1) | prev/next never modified during replace |
+
+## 🛡️ Memory Management
+
+Since Python strings are immutable, assigning a new string to
+`node.data` orphans the old string object. Python's Garbage
+Collector automatically reclaims it, ensuring **zero memory
+leakage** even when replacing thousands of occurrences across
+a large document.
+
 # 📑 Phase 5: Undo/Redo Architecture & System Integration
 
 ## 🔁 Hybrid Undo/Redo Architecture
