@@ -2,12 +2,12 @@
 # 📝 Text Editor using Doubly Linked List Develop a simple text editor where each character/line is a node in a doubly linked list. Support features: undo/redo, cursor movement, find & replace.
 
 
-## 👥 Members
-* **Thành viên 1:Nguyễn Thị Đoan Trang_11245941** Node, DoublyLinkedList
-* **Thành viên 2:Phạm Anh Thơ_11245934** Cursor 
-* **Thành viên 3:Nguyễn Nam Huy_11245880** Insert/Delete
-* **Thành viên 4:Nguyễn Đình Khải_11245883** Find & Replace
-* **Thành viên 5:Trần Trúc Quỳnh_11245929** Undo/Redo using Stack
+## 👥 Group Members
+* **Member 1: Nguyễn Thị Đoan Trang_11245941** Node, DoublyLinkedList
+* **Member 2: Phạm Anh Thơ_11245934** Cursor 
+* **Member 3: Nguyễn Nam Huy_11245880** Insert/Delete
+* **Member 4: Nguyễn Đình Khải_11245883** Find & Replace
+* **Member 5: Trần Trúc Quỳnh_11245929** Undo/Redo using Stack
 # 📑 Phase 1: System Architecture & Specification
 
 
