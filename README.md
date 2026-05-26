@@ -54,6 +54,37 @@ To ensure absolute system stability and prevent **'Out-of-bounds'** exceptions (
 * **Null Pointer Safeguards:** Strictly validates adjacent nodes before executing any vertical transition, blocking invalid memory jumps at the head or tail of the document.
 * **Dynamic Snap Alignment:** Employs a mathematical bounding function—`min(col_index, len(current_node.data))`—to automatically snap the horizontal coordinate to the safe boundary when the cursor jumps between lines of asymmetric lengths.
 
+To help you draft a high-quality README section for **Phase 3**, I have structured this briefing to highlight your technical implementations and the logic behind your text editor's core functionality.
+
+Since you are managing a data science/data-heavy project, this section emphasizes the efficiency of your approach.
+
+### ** Phase 3: Core Editing Operations**
+
+#### **## Overview**
+
+Phase 3 focuses on the implementation of core text-editing operations, transforming the document from a static data structure into an interactive environment. This phase prioritizes efficient node manipulation and string processing within the linked-list architecture.
+
+#### **## Key Functionalities**
+
+The `InsertAndDelete` class manages the state of the document based on cursor interaction:
+
+* **`Insert_at_cursor`**: Enables real-time text injection by splitting the current string at the `col_index`, inserting the new content, and re-joining the fragments.
+* **`Backspace_key`**: Handles backward deletion. It supports standard character deletion and cross-node line merging, effectively managing the document's link structure when the cursor is at the beginning of a line.
+* **`forward_delete`**: Manages forward deletion. This function mirrors the backward logic but intelligently handles line-pulling, merging the next node's data into the current one when the cursor reaches the end of a line.
+* **`Enter_key`**: Implements line breaks by splitting the current node's data at the cursor position and creating a new node in the linked list, followed by a cursor reset to the new line.
+
+#### **## Technical Performance**
+
+The operations in this phase are optimized for a linked-list structure where individual line manipulation is performed in linear time:
+
+| Operation | Complexity | Note |
+| --- | --- | --- |
+| **Insert/Split/Merge** | $O(n)$ | Performance scales linearly with the length of the strings being processed ($n$). |
+| **Node Traversal** | $O(1)$ | Linked list pointer updates are constant time, ensuring efficient document restructuring. |
+
+
+**Would you like me to help you format a `Usage` example snippet to include right under your `Key Functionalities` section?**
+
 # 📑 Phase 5: Undo/Redo Architecture & System Integration
 
 ## 🔁 Hybrid Undo/Redo Architecture
